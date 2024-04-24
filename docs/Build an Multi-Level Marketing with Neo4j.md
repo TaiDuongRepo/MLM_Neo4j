@@ -36,7 +36,7 @@ Mô hình mẫu dựa trên MLM:
 
 Ví dụ MLM:
 
-!(image)[http://i.imgur.com/ODDXeKb.png[align="center"]]
+!(image)[http://i.imgur.com/ODDXeKb.png]
 
 Chúng tôi thấy rằng, tùy thuộc vào cấp độ bạn đang ở, cách bạn được bồi thường cho cả doanh số bán hàng trực tiếp và cả các dòng thu nhập thụ động của bạn có thể khác nhau rất nhiều. Như vậy, việc tính toán bồi thường có thể ít nhất là khó khăn.
 
@@ -66,4 +66,4 @@ Trước khi tải bất kỳ dữ liệu nào vào Neo4j, điều quan trọng 
 
 # Slaschco Sales Compensation Application Data Model:
 
-!()[http://i.imgur.com/2y4MfIX.png[align="center"]]
+!()[http://i.imgur.com/2y4MfIX.png]
