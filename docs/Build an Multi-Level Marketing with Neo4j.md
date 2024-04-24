@@ -1,6 +1,5 @@
 # Build an Multi-Level Marketing with Neo4j
 
-Status: Done
 Tag: Graph, University
 URL: https://github.com/TaiDuongRepo/MLM_Neo4j
 
@@ -37,34 +36,34 @@ Mô hình mẫu dựa trên MLM:
 
 Ví dụ MLM:
 
-![Untitled](Build%20an%20Multi-Level%20Marketing%20with%20Neo4j%2023bd7bd01f48412cac06a39800abe80a/Untitled.png)
+image::http://i.imgur.com/ODDXeKb.png[align="center"]
 
 Chúng tôi thấy rằng, tùy thuộc vào cấp độ bạn đang ở, cách bạn được bồi thường cho cả doanh số bán hàng trực tiếp và cả các dòng thu nhập thụ động của bạn có thể khác nhau rất nhiều. Như vậy, việc tính toán bồi thường có thể ít nhất là khó khăn.
 
 ## Giới thiệu bộ dữ liệu
 
-Các dữ liệu được lưu trong các file `.csv` . 
+Các dữ liệu được lưu trong các file `.csv` .
 
 - `employees.csv`
-    - Dữ liệu có các trường dữ liệu: employeeID, name, reportsTo.
+  - Dữ liệu có các trường dữ liệu: employeeID, name, reportsTo.
 - `item.csv`
-    - Dữ liệu có các trường: item, factor, name, price, wprice, kicker.
+  - Dữ liệu có các trường: item, factor, name, price, wprice, kicker.
 - `transactions.csv`
-    - Dữ liệu có các trường: transactionID, salesRepID, item1, item2, item3, period.
+  - Dữ liệu có các trường: transactionID, salesRepID, item1, item2, item3, period.
 
 Trước khi tải bất kỳ dữ liệu nào vào Neo4j, điều quan trọng là phải biết những câu hỏi nào sẽ quan trọng đối với doanh nghiệp. Trong trường hợp này, mô hình hóa một “sales compensation tool”. Các truy vấn hàng đầu có thể là:
 
 - Hoa hồng do mỗi đại diện (rep), theo thời gian (period), phù hợp với compensation rules
 - Hoa hồng do mỗi đại diện (rep), hàng năm phù hợp với các quy tắc bồi thường
 - Sales Leaderboard
-    - Top Sales Rep by Total Sales
-    - Top Sales Rep by Largest Deal
+  - Top Sales Rep by Total Sales
+  - Top Sales Rep by Largest Deal
 - Global reporting
-    - Sales by period
-    - Top selling items
+  - Sales by period
+  - Top selling items
 - Recommendations
-    - Những mặt hàng nào được bán cùng nhau thường xuyên nhất?
+  - Những mặt hàng nào được bán cùng nhau thường xuyên nhất?
 
 # Slaschco Sales Compensation Application Data Model:
 
-![Untitled](Build%20an%20Multi-Level%20Marketing%20with%20Neo4j%2023bd7bd01f48412cac06a39800abe80a/Untitled%201.png)
+image::http://i.imgur.com/2y4MfIX.png[align="center"]
