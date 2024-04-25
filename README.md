@@ -2,8 +2,6 @@
 
 Nội dung: Sử dụng Neo4j cho việc xây dựng hệ thống kinh doanh đa cấp, sử dụng cấu trúc cây để mô tả việc dòng tiền thu nhập của các cộng tác viên khi chuyển lên các đại lý cấp trên.
 
-## Contents
-
 ## Using Neo4j
 
 ### Setup
