@@ -40,17 +40,6 @@ Ví dụ MLM:
 
 Chúng tôi thấy rằng, tùy thuộc vào cấp độ bạn đang ở, cách bạn được bồi thường cho cả doanh số bán hàng trực tiếp và cả các dòng thu nhập thụ động của bạn có thể khác nhau rất nhiều. Như vậy, việc tính toán bồi thường có thể ít nhất là khó khăn.
 
-## Giới thiệu bộ dữ liệu
-
-Các dữ liệu được lưu trong các file `.csv` .
-
-- `employees.csv`
-  - Dữ liệu có các trường dữ liệu: employeeID, name, reportsTo.
-- `item.csv`
-  - Dữ liệu có các trường: item, factor, name, price, wprice, kicker.
-- `transactions.csv`
-  - Dữ liệu có các trường: transactionID, salesRepID, item1, item2, item3, period.
-
 Trước khi tải bất kỳ dữ liệu nào vào Neo4j, điều quan trọng là phải biết những câu hỏi nào sẽ quan trọng đối với doanh nghiệp. Trong trường hợp này, mô hình hóa một “sales compensation tool”. Các truy vấn hàng đầu có thể là:
 
 - Hoa hồng do mỗi đại diện (rep), theo thời gian (period), phù hợp với compensation rules
