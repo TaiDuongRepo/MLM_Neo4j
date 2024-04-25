@@ -76,37 +76,37 @@ RETURN tc1, n1;
 MATCH (success_builder:Person {level:2})<-[r:REPORTS_TO*..]-(downStreamers)-[:SOLD]-(transaction)-[:CONTAINS]-(item)
 WITH sum(item.price*.05) as downStream2, success_builder
 MATCH (success_builder)-[:SOLD]-(transaction)-[:CONTAINS]-(item)
-WITH sum(item.price*.25) + downStream2 as tc2, success_builder.name as n2
+WITH sum(item.price*.25) + downStream2 as tc2, success_builder.name as n2, downStream2
 RETURN tc2, n2;
 //level 3 comp
 MATCH (senior_mage:Person {level:3})<-[r:REPORTS_TO*..]-(downStreamers)-[:SOLD]-(transaction)-[:CONTAINS]-(item)
 WITH sum(item.price*.05)+sum(item.wholesalePrice*.25) as downStream3, senior_mage
 MATCH (senior_mage)-[:SOLD]-(transaction)-[:CONTAINS]-(item)
-WITH sum(item.price*.5) + downStream3 as tc3, senior_mage.name as n3
+WITH sum(item.price*.5) + downStream3 as tc3, senior_mage.name as n3, downStream3
 RETURN tc3, n3;
 //level 4 comp
 MATCH (transaction)-[:CONTAINS]-(item)
 WITH sum(item.price*.01) as globalRoyalty
 MATCH (guild_leader:Person {level:4})<-[r:REPORTS_TO*..]-(downStreamers)-[:SOLD]-(transaction)-[:CONTAINS]-(item)
-WITH sum(item.price*.07)+sum(item.wholesalePrice*.3) + globalRoyalty as downStreamGlobal4, guild_leader
+WITH sum(item.price*.07)+sum(item.wholesalePrice*.3) + globalRoyalty as downStreamGlobal4, guild_leader, globalRoyalty
 MATCH (guild_leader)-[:SOLD]-(transaction)-[:CONTAINS]-(item)
-WITH sum(item.price*.5) + downStreamGlobal4 as tc4, guild_leader.name as n4
+WITH sum(item.price*.5) + downStreamGlobal4 as tc4, guild_leader.name as n4, downStreamGlobal4
 RETURN tc4, n4;
 //level 5 comp
 MATCH (transaction)-[:CONTAINS]-(item)
 WITH sum(item.price*.02) as globalRoyalty
 MATCH (boss:Person {level:5})<-[r:REPORTS_TO*..]-(downStreamers)-[:SOLD]-(transaction)-[:CONTAINS]-(item)
-WITH sum(item.price*.07)+sum(item.wholesalePrice*.3) + globalRoyalty as downStreamGlobal5, boss
+WITH sum(item.price*.07)+sum(item.wholesalePrice*.3) + globalRoyalty as downStreamGlobal5, boss, globalRoyalty
 MATCH (boss)-[:SOLD]-(transaction)-[:CONTAINS]-(item)
-WITH sum(item.price*.5) + downStreamGlobal5 as tc5, boss.name as n5
+WITH sum(item.price*.5) + downStreamGlobal5 as tc5, boss.name as n5, downStreamGlobal5
 RETURN tc5, n5;
 //level 6 comp
 MATCH (transaction)-[:CONTAINS]-(item)
 WITH sum(item.price*.05) as globalRoyalty
 MATCH (big_boss:Person {level:6})<-[r:REPORTS_TO*..]-(downStreamers)-[:SOLD]-(transaction)-[:CONTAINS]-(item)
-WITH sum(item.price*.1)+sum(item.wholesalePrice*.5) + globalRoyalty as downStreamGlobal6, big_boss
+WITH sum(item.price*.1)+sum(item.wholesalePrice*.5) + globalRoyalty as downStreamGlobal6, big_boss, globalRoyalty
 MATCH (boss)-[:SOLD]-(transaction)-[:CONTAINS]-(item)
-WITH sum(item.price*.65) + downStreamGlobal6 as tc6, big_boss.name as n6
+WITH sum(item.price*.65) + downStreamGlobal6 as tc6, big_boss.name as n6, downStreamGlobal6
 RETURN tc6, n6;
 ```
 
